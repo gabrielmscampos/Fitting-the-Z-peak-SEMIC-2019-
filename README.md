@@ -14,7 +14,7 @@ In a nutshell the best mathematical model that fit the Z⁰ resonance peak was g
 This model produced the following fit along with the selection criteria in transverse momentum (pT) and pseudorapidity (eta): 
 
 <p align="center">
-  <img src="https://github.com/gabrielmscampos/Fitting-the-Z-peak-SEMIC-2019-/blob/master/plots/model4:convoluted_breitwigner_crystalball_exponential.png" width="500" height="350" />
+  <img src="https://github.com/gabrielmscampos/Fitting-the-Z-peak-SEMIC-2019-/blob/master/plots/model4:convoluted_breitwigner_crystalball_exponential.png" width="500" height="400" />
 </p>
 
 References:
