@@ -25,7 +25,8 @@ constant = {"z_mass"         : 91.1876,                   # z boson mass [Gev/c�
             "cs_Zmumu"       : 968,                       # cross section for inclusive Z -> mu+mu- production [pb]
             "error_cs_Zmumu" : 8}                         # cross section error for inclusive Z -> mu+mu- production [pb]
 
-dpi = 500
+dpi = 300 # matplotlib savefig argument
+style = dict(size = 11, color = "black")  # Styling text in matplotlib
 
 print("Setuping constants: Ok!")
 
@@ -222,7 +223,7 @@ plt.xlim(-0.5, 2.5)
 plt.xlabel("Log( Massa [GeV/c²] )", fontsize = '12')
 plt.ylabel("Eventos", fontsize = '12')
 plt.title(r"Espectro de massa do canal de decaimento do sistema $\mu+\mu-$")
-plt.savefig("dimuon_mass_spectrum.png", dpi = dpi)
+plt.savefig("img/dimuon_mass_spectrum.png", dpi = dpi)
 plt.show()
 
 print("Reconstructing di-muon's channel: Ok!")
@@ -244,7 +245,7 @@ plt.xlabel("Massa [GeV/c²]", fontsize = '12')
 plt.ylabel("Eventos", fontsize = '12')
 plt.legend(loc = "upper right", handlelength = 0, handletextpad = 0)
 plt.title(r"Pico de massa do bóson $Z \rightarrow \mu+\mu-$")
-plt.savefig("z_boson_peak_noCuts.png", dpi = dpi)
+plt.savefig("img/z_boson_peak_noCuts.png", dpi = dpi)
 plt.show()
 
 print("Selecting Z Boson Resonance Peak: Ok!")
@@ -268,7 +269,6 @@ stderrM_bwl      = bwl.params['M'].stderr
 stderr_gamma_bwl = bwl.params["gamma"].stderr
 Nchi2_bwl        = bwl.redchi
 
-style = dict(size = 10, color = "black")
 entries = "Entries: {0:.0f}".format(len(z_boson.mass.values))
 mean = "Mean: {0:.2f}".format(np.mean(z_boson.mass.values))
 std = "Std Dev: {0:.2f}".format(np.std(z_boson.mass.values))
@@ -294,7 +294,7 @@ plt.xlabel("Massa [GeV/c²]")
 plt.ylabel("Eventos")
 #plt.suptitle(r"Ajuste do pico de massa do bóson $Z \rightarrow \mu+\mu-$")
 plt.title("Fundo: Função Linear\nSinal: Distribuição Breit-Wigner")
-plt.savefig("model1:bretiwigner_linear.png", dpi = dpi)
+plt.savefig("img/model1:bretiwigner_linear.png", dpi = dpi)
 plt.show()
 
 print("Regression Model 1: Ok!")
@@ -318,7 +318,6 @@ stderrM_ps      = psConvBgLin.params['M'].stderr
 stderr_gamma_ps = psConvBgLin.params["gamma"].stderr
 Nchi2_ps        = psConvBgLin.redchi
 
-style = dict(size = 10, color = "black")
 entries = "Entries: {0:.0f}".format(len(z_boson.mass.values))
 mean = "Mean: {0:.2f}".format(np.mean(z_boson.mass.values))
 std = "Std Dev: {0:.2f}".format(np.std(z_boson.mass.values))
@@ -344,7 +343,7 @@ plt.ylabel("Eventos")
 plt.legend()
 #plt.suptitle(r"Ajuste do pico de massa do bóson $Z \rightarrow \mu+\mu-$")
 plt.title("Fundo: Função Linear\nSinal: Pseudo convolução entre as distribuições Breit-Wigner e de Gauss")
-plt.savefig("model2:pseudoConvoluted_breitwigner_gaussian_linear.png", dpi = dpi)
+plt.savefig("img/model2:pseudoConvoluted_breitwigner_gaussian_linear.png", dpi = dpi)
 plt.show()
 
 print("Regression Model 2: Ok!")
@@ -370,7 +369,6 @@ stderrM_hw      = convBgLin.params['M'].stderr
 stderr_gamma_hw = convBgLin.params["gamma"].stderr
 Nchi2_hw        = convBgLin.redchi
 
-style = dict(size = 10, color = "black")
 entries = "Entries: {0:.0f}".format(len(z_boson.mass.values))
 mean = "Mean: {0:.2f}".format(np.mean(z_boson.mass.values))
 std = "Std Dev: {0:.2f}".format(np.std(z_boson.mass.values))
@@ -396,7 +394,7 @@ plt.xlabel("Massa [GeV/c²]")
 plt.ylabel("Eventos")
 #plt.suptitle(r"Ajuste do pico de massa do bóson $Z \rightarrow \mu+\mu-$")
 plt.title("Fundo: Função Linear\nSinal: Convolução entre as distribuições Breit-Wigner e de Gauss")
-plt.savefig("model3:convoluted_breitwigner_gaussian_linear.png", dpi = dpi)
+plt.savefig("img/model3:convoluted_breitwigner_gaussian_linear.png", dpi = dpi)
 plt.show()
 
 print("Regression Model 3: Ok!")
@@ -428,7 +426,7 @@ plt.xlabel("Massa [GeV/c²]", fontsize = '12')
 plt.ylabel("Eventos", fontsize = '12')
 plt.legend(loc = "upper right", handlelength = 0, handletextpad = 0)
 plt.title(r"Pico de massa do bóson $Z \rightarrow \mu+\mu-$")
-plt.savefig("z_boson_peak_withCuts.png", dpi = dpi)
+plt.savefig("img/z_boson_peak_withCuts.png", dpi = dpi)
 plt.show()
 
 print("Selecting Z Boson Resonance Peak with Cuts: Ok!")
@@ -457,7 +455,6 @@ stderrM_bbexp = res_bbexp.params['M'].stderr
 stderr_gamma_bbexp = res_bbexp.params["gamma"].stderr
 Nchi2_bbexp  = res_bbexp.redchi
 
-style = dict(size = 10, color = "black")
 entries = "Entries: {0:.0f}".format(len(z_boson.mass.values))
 mean = "Mean: {0:.2f}".format(np.mean(z_boson.mass.values))
 std = "Std Dev: {0:.2f}".format(np.std(z_boson.mass.values))
@@ -469,11 +466,9 @@ eta = r"$|\eta|$ < 2.1"
 
 plt.text(62, 300, pt, **style)
 plt.text(62, 285, eta, **style)
-
 plt.text(62, 265, entries, **style)
 plt.text(62, 250, mean, **style)
 plt.text(62, 235, std, **style)
-
 plt.text(62, 215, mass, **style)
 plt.text(62, 200, decaywidth, **style)
 plt.text(62, 185, chi2, **style)
@@ -489,7 +484,7 @@ plt.ylabel("Eventos")
 plt.legend()
 #plt.suptitle(r"Ajuste do pico de massa do bóson $Z \rightarrow \mu+\mu-$")
 plt.title("Fundo: Função Exponencial\nSinal: Convolução entre as distribuições Breit-Wigner e Crystal Ball")
-plt.savefig("model4:convoluted_breitwigner_crystalball_exponential.png", dpi = dpi)
+plt.savefig("img/model4:convoluted_breitwigner_crystalball_exponential.png", dpi = dpi)
 plt.show()
 
 print("Regression Model 4: Ok!")
