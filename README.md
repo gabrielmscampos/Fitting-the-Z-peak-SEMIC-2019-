@@ -1,7 +1,7 @@
 # Fitting the Z peak SEMIC 2019
 In this repository is available the code and references used in this study.
 
-Pre-filtered Run2011A data can be found at https://github.com/cms-opendata-education/zboson-exercise or at the data folder of this repository. All fitting tools were used from LMFIT (https://lmfit.github.io/lmfit-py/) library.
+Pre-filtered Run2011A data can be found at https://github.com/cms-opendata-education/zboson-exercise. The fitting tools that were used are from LMFIT (https://lmfit.github.io/lmfit-py/) library.
 
 All mathematical functions and probability density functions and the convoluted integral are hardcoded in the script.
 
